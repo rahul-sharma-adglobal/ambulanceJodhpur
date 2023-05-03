@@ -14,14 +14,168 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @layer components {
+
+    /* layout start */
+    .row {
+      @apply flex flex-wrap w-full;
+    }
+
+    .col {
+      @apply flex-1;
+    }
+
+    .col_1 {
+      @apply w-1/12;
+    }
+
+    .col_2 {
+      @apply w-2/12;
+    }
+
+    .col_3 {
+      @apply w-3/12;
+    }
+
+    .col_4 {
+      @apply w-4/12;
+    }
+
+    .col_5 {
+      @apply w-5/12;
+    }
+
+    .col_6 {
+      @apply w-6/12;
+    }
+
+    .col_7 {
+      @apply w-7/12;
+    }
+
+    .col_8 {
+      @apply w-8/12;
+    }
+
+    .col_9 {
+      @apply w-9/12;
+    }
+
+    .col_10 {
+      @apply w-10/12;
+    }
+
+    .col_11 {
+      @apply w-11/12;
+    }
+
+    .col_12 {
+      @apply w-full;
+    }
+
+    /* layout end */
+    /* header Start */
+    .header {
+      @apply p-4 fixed top-0 left-0 h-16 shadow-sm w-full bg-white;
+      z-index: 999;
+    }
+
+    .header__logo {
+      @apply font-extrabold text-2xl;
+      color:#d80027;
+    }
+
+    /* header End */
+    /* banner Start */
+    .banner{
+      @apply py-20 min-h-screen bg-white;
+    }
+    .banner__leftSection{
+      @apply relative bg-no-repeat col_12 md:col_7 lg:col_6;
+      background-image:url("../public/assets/images/dotted.svg");
+      background-position:left center;
+    }
+    .banner__leftSection::after{
+      content:"";
+      @apply absolute top-0 left-full h-full md:w-40 bg-white bg-opacity-80
+    }
+    .banner__leftSection::before{
+      content:"";
+      @apply absolute top-0 -right-80 h-full md:w-40 bg-white bg-opacity-50
+    }
+    .callUs{
+      @apply border-2 px-1 md:px-2 lg:px-4 py-1 md:py-2 text-base md:text-lg font-bold rounded-lg mt-4;
+      border-color:#d80027;
+      color:#d80027;
+    }
+    .banner__rightSection{
+      @apply bg-no-repeat;
+      background-image:url("../public/assets/images/banner.svg");
+      background-size:100% 100%;
+    }
+    /* banner End */
+    /* why choose us Start */
+    .whyChooseUs__outer{
+     @apply  bg-white pb-10
+    }
+    .whyChooseUs{
+    @apply text-center py-4
+    }
+    .whyChooseUs__heading{
+      @apply text-2xl md:text-3xl lg:text-4xl font-bold pb-4 relative;
+      text-shadow: 2px 2px rgba(0,0,0,0.2);
+    }
+    .whyChooseUs__heading::after{
+      @apply absolute p-0.5 bg-red-600 w-52 bottom-0;
+      content:"";
+      left:calC(50% - 6.5rem)
+    }
+    .whyChooseus__outer{
+      @apply col_12 md:col_6 lg:col_3 p-2;
+    }
+    .whyChooseUsBlock{
+      @apply shadow-md h-full p-2 rounded-lg
+    }
+    .whyChooseUsBlock__heading{
+      @apply text-xl font-bold py-2 md:min-h-[100px];
+      /* min-height:100px; */
+    }
+    /* why choose us end */
+    /* our services start */
+    .ourServices__outer{
+      @apply bg-no-repeat relative;
+      background-image:url("../public/assets/images/whyprefer/whypreferbg.jpg");
+      background-size:100% 70%;
+      background-attachment: fixed;
+      background-position: bottom;
+    }
+    .ambulanceCar__outer{
+      @apply col_12 md:col_4 p-4;
+    }
+    .ambulanceCar{
+      @apply shadow-lg px-4 py-8 bg-white rounded-lg text-center h-full;
+    }
+.ambulanceCar__model{
+  @apply text-lg font-bold
+}
+.ambulanceCar__price{
+  @apply text-slate-600
+}
+.ambulanceCar__withNursing{
+  @apply text-sm;
+}
+    /* our services end */
+    /* floating Buttons Start */
+    .floatingButtons{
+      @apply fixed bottom-0 left-0 p-4;
+    }
+    .floatingBtn{
+      @apply w-10 lg:w-16 h-10 lg:h-16 my-2;
+    }
+    .floatingBtn img{
+      @apply w-full h-full
+    }
+    /* floating Buttons End */
+  }
 }
